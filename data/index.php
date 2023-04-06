@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>ImageShare</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <meta name="description" content="ImageShare is a lightweight web app for uploading images, created for the Nintendo 3DS and other legacy web browsers.">
+    <meta name="description" content="Lightweight web app for uploading images, created for the Nintendo 3DS and other legacy web browsers.">
+    <!-- Custom tile for Internet Explorer and Edge -->
+    <meta name="application-name" content="ImageShare" />
+    <meta name="msapplication-config" content="/ieconfig.xml" />
+    <!-- Metadata for old iPhone and iPad devices -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" sizes="192x192" href="/img/maskable_icon_x192.png">
+    <meta name="apple-mobile-web-app-title" content="ImageShare">
     <!-- Viewport size and analytics -->
     <?php
     // Viewport size
@@ -45,14 +51,13 @@
       curl_close($crl);
     }
     ?>
-    <!-- Icons -->
+    <!-- Standard icons -->
     <?php
     // Use a 16x16 favicon for the 3DS and Wii, larger icons in multiple sizes for other browsers
     if (str_contains($_SERVER['HTTP_USER_AGENT'], 'Nintendo')) {
       echo '<link rel="icon" href="favicon.ico" type="image/x-icon">'.PHP_EOL;
     } else {
-      echo '<link rel="apple-touch-icon" sizes="192x192" href="img/maskable_icon_x192.png">'.PHP_EOL;
-      echo '    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_x16.png">'.PHP_EOL;
+      echo '<link rel="icon" type="image/png" sizes="16x16" href="img/favicon_x16.png">'.PHP_EOL;
       echo '    <link rel="icon" type="image/png" sizes="24x24" href="img/favicon_x24.png">'.PHP_EOL;
     }
     ?>
@@ -60,9 +65,15 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@corbindavenport" />
     <meta name="twitter:title" content="ImageShare" />
-    <meta name="twitter:description" content="ImageShare is a lightweight web app for uploading images, created for the Nintendo 3DS and other legacy web browsers." />
+    <meta name="twitter:description" content="Lightweight web app for uploading images, created for the Nintendo 3DS and other legacy web browsers." />
     <meta name="twitter:image" content="https://theimageshare.com/img/maskable_icon_x512.png" />
     <meta name="twitter:image:alt" content="ImageShare app icon" />
+    <!-- OpenGraph card -->
+    <meta property="og:url" content="https://theimageshare.com/" />
+    <meta property="og:title" content="ImageShare" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Lightweight web app for uploading images, created for the Nintendo 3DS and other legacy web browsers." />
+    <meta property="og:image" content="https://theimageshare.com/img/maskable_icon_x512.png" />
 </head>
 
 <body>
