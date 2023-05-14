@@ -24,7 +24,7 @@
       echo '<meta name="viewport" content="width=320" />'.PHP_EOL;
     } else {
       // Normal mobile scaling for New 3DS Browser and everything else
-      echo '<meta name="viewport" content="initial-scale=1">'.PHP_EOL;
+      echo '<meta name="viewport" content="width=device-width, initial-scale=1">'.PHP_EOL;
     }
     // Send Plausible analytics data for pageview
     if (str_contains($_SERVER['HTTP_HOST'], 'theimageshare.com')) {
